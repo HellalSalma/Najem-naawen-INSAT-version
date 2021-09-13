@@ -1,0 +1,35 @@
+
+<div class="contenu" >
+
+    <h2 [@expand] *ngIf="ressources"><b>{{ressources[0].category}}</b> </h2>
+
+  <div class="container" >
+    <div class="cards" *ngIf="ressources" [@expand]>
+      <a class="card" style="width: 280px; height: 350px" *ngFor="let ressource of ressources">
+<!--				    <span class="card-header" style="background-image: url({{ressource.image}});" [routerLink]="['/detailRessource', ressource.id]">-->
+
+<!--			</span>-->
+            <span class="card-summary">
+              					<h3>{{ressource.title}}</h3>
+				<p>{{ressource.description}}</p>
+			</span>
+            <span class="card-meta">
+          <a class="read-more" [routerLink]="['/detailRessource', ressource.id]">Read more</a>
+			</span>
+      </a>
+    </div>
+  </div>
+  <div [hidden]="ressources">
+    <img class="load" src="assets/images/loader.gif" alt="">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

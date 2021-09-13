@@ -1,0 +1,46 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+
+    <!-- Login Form -->
+    <form novalidate class="cont" [formGroup]="postForm" #pform= "ngForm" (ngSubmit)="onSubmit()">
+      <span (click)="close()">X</span>
+
+      <input type="text" id="title" class="fadeIn first" name="title" placeholder="Internship title" formControlName="title" required
+             [(ngModel)]="title"
+             class="form-control">
+      <div *ngIf="formErrors.title">{{formErrors.title}}</div>
+
+      <input type="text" id="domain" class="fadeIn second" name="domain" placeholder="domain"
+             formControlName="domain" required
+             [(ngModel)]="domain">
+      <div *ngIf="formErrors.domain">{{formErrors.domain}}</div>
+
+      <input type="text" id="link" class="fadeIn third" name="link" placeholder="link"
+             formControlName="link" required
+             [(ngModel)]="link">
+      <div *ngIf="formErrors.link">{{formErrors.link}}</div>
+
+      <input type="date" id="publishedOn" class="fadeIn fourth" name="date" placeholder="date"
+             formControlName="publishedOn" required
+             [(ngModel)]="publishedOn">
+      <div *ngIf="formErrors.publishedOn">{{formErrors.publishedOn}}</div>
+
+      <input type="text" id="description" class="fadeIn fourth" name="description" placeholder="description"
+             formControlName="description" required
+             [(ngModel)]="description">
+      <div *ngIf="formErrors.description">{{formErrors.description}}</div>
+
+      <input type="submit" class="fadeIn last" value="submit" [disabled]="postForm.invalid"
+             (click)="post(postForm.value)">
+    </form>
+
+
+    <!-- Remind Passowrd -->
+    <!--    <div id="formFooter">-->
+    <!--      <a [routerLink]="['createCV']" class="underlineHover" href="#">See template</a>-->
+    <!--    </div>-->
+
+  </div>
+</div>

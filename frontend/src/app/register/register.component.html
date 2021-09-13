@@ -1,0 +1,94 @@
+
+<form novalidate class="cont" [formGroup]="RegisterForm" #rform= "ngForm" (ngSubmit)="onSubmitLogin()">
+
+  <div class="form sign-in" >
+
+    <h2>Time to feel like home,</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <label>
+          <span>Firstname</span>
+          <input type="text"
+                 formControlName="firstName"
+                 required
+                 id="firstName"
+                 [(ngModel)]="first_name"
+                 class="form-control"/>
+          <div *ngIf="formErrors.firstName">{{formErrors.firstName}}</div>
+
+        </label>
+        <label>
+          <span>Username</span>
+          <input type="text"
+                 formControlName="username"
+                 required
+                 id="userame"
+                 [(ngModel)]="username"
+                 class="form-control"/>
+          <div *ngIf="formErrors.username">{{formErrors.username}}</div>
+
+        </label>
+
+      </div>
+      <div class="col-md-6">
+        <label>
+          <span>Lastname</span>
+          <input type="text"
+                 formControlName="lastName"
+                 required
+                 id="last_name"
+                 [(ngModel)]="lastName"
+                 class="form-control"/>
+          <div *ngIf="formErrors.lastName">{{formErrors.lastName}}</div>
+
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email"
+                 formControlName="email"
+                 required
+                 id="email"
+                 [(ngModel)]="email"
+                 class="form-control"/>
+          <div *ngIf="formErrors.email">{{formErrors.email}}</div>
+
+        </label>
+
+      </div>
+
+    </div>
+
+    <label>
+      <span>Password</span>
+      <input type="password"
+             formControlName="password"
+             required
+             id="password"
+             [(ngModel)]="password"/>
+      <div *ngIf="formErrors.password">{{formErrors.password}}</div>
+
+    </label>
+    <button class="submit" type="submit"
+            [disabled]="RegisterForm.invalid"
+            (click)="ajoutUser(RegisterForm.value)">Register</button>
+<!--    <button  class="submit"  (click)="close()"> Cancel </button>-->
+
+  </div>
+
+
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>New here?</h2>
+        <p>Sign up and discover great amount of new opportunities!</p>
+      </div>
+      <div class="img__btn" (click)="openLoginForm()">
+        <span class="m--up" >Login</span>
+        <!--        <span class="m&#45;&#45;in" >Login</span>-->
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
