@@ -1,6 +1,7 @@
 # Najem-naawen-INSAT-version  
 
-<div style="text-align:center"><img src = "images/logo.jpg"></div>
+<div style="text-align:center"><img src = "images/logo.jpg" width=40%></div>
+
 
 It's a website that helps INSAT students search for opportunities concerning jobs and scholarships. There is also a forum in which students can ask questions. 
 The INSAT student can find and apply in all job opportunities, he can also create its own CV. 
